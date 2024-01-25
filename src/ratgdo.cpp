@@ -82,7 +82,7 @@ extern "C" void app_main() {
     // I (3240) RATGDO: free heap is 54580 --> 47524
     xTaskCreate(homekit_task_entry, HOMEKIT_TASK_NAME, HOMEKIT_TASK_STK_SZ, NULL, HOMEKIT_TASK_PRIO, NULL);
 
-    //setup_web();
+    setup_web();
 
     ESP_LOGI(TAG, "RATGDO setup completed");
     ESP_LOGI(TAG, "Starting RATGDO Homekit version %s", "esptest");  // TODO

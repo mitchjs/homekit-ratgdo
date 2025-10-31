@@ -130,6 +130,23 @@ void serialCLI(char cmd)
         send_get_openings();
         break;
     }
+
+    case 'j':
+    {
+        userConfig->set(cfg_builtInTTC, 0);
+        garage_door.builtInTTC = 0;
+        send_cancel_ttc();
+        break;
+    }
+
+    case 'k':
+    {
+        constexpr int secs = 10;
+        userConfig->set(cfg_builtInTTC, secs);
+        garage_door.builtInTTC = secs;
+        send_set_ttc(secs);
+        break;
+    }
 #endif
 
     case 'l':
